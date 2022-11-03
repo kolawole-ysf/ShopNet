@@ -294,7 +294,7 @@ section{
     #hero{
         height: 60vh;
         width: 100%;
-        background-position: right -90% top 10%;
+        background-position: right 0% top 10%;
         background-size:contain;
         object-fit: cover;
         background-color: rgb(201, 198, 198);
