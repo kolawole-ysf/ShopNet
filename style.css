@@ -84,6 +84,19 @@ section{
 .close, .open{
     display: none;
 }
+.normal-btn{
+    padding: 8px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-weight: 700;
+    transition: all .2s ease-in-out;
+}
+.normal-btn:hover{
+    background-color: rgb(6, 167, 167);
+    color: white;
+}
 /*----------------------Navbar-----------------------------*/
 #header{
     display: flex;
@@ -91,7 +104,7 @@ section{
     justify-content: space-between;
     background-color: whitesmoke;
     box-shadow: 0px 2px 8px rgba(0,0,0,0.5);
-    position: sticky;
+    position: fixed;
     top:0;
     left:0;
     z-index: 10;
@@ -255,7 +268,25 @@ section{
     border-radius: 50%;
     background-color: #ebf5ec;
 }
-
+/* ----------------Banner----------------- */
+#banner{
+    width:100%;
+    height: 200px;
+    background-image: url('https://www.npd.com/wp-content/uploads/2021/05/fashion-banner-1440x480.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: contain;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#banner h2{
+    color: white;
+    font-size: 40px;
+}
 @media (max-width:780px){
     .container{
         width: 90%;
@@ -265,6 +296,10 @@ section{
     }
     .container #cart{
         right: 15%;
+    }
+    .logo{
+        font-size: 20px;
+        font-weight: 700;
     }
     .navbar{
         flex-direction: column;
@@ -294,7 +329,7 @@ section{
     #hero{
         height: 60vh;
         width: 100%;
-        background-position: right 0% top 10%;
+        background-position: right 0% top 30%;
         background-size:contain;
         object-fit: cover;
         background-color: rgb(201, 198, 198);
@@ -339,5 +374,19 @@ section{
     }
     #featured-pro p{
         font-size: 14px;
+    }
+    #banner h2{
+        color: white;
+        font-size: 24px;
+    }
+    .normal-btn{
+        padding: 8px 16px;
+        background-color: white;
+        color: black;
+        border-radius: 4px;
+        margin: 10px 0;
+        font-weight: 700;
+        transition: all .2s ease-in-out;
+        font-size: 16px;
     }
 }
