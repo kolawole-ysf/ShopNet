@@ -71,6 +71,19 @@ section{
 .flex-wrap{
     flex-wrap: wrap;
 }
+.toggle{
+    width:40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    position: absolute;
+    right: 5%;  
+}
+.close, .open{
+    display: none;
+}
 /*----------------------Navbar-----------------------------*/
 #header{
     display: flex;
@@ -82,6 +95,13 @@ section{
     top:0;
     left:0;
     z-index: 10;
+}
+.container #cart{
+    position: absolute;
+    right: 10%;
+}
+.container #cart:hover{
+    color: rgb(6, 167, 167);
 }
 .navbar{
     display: flex;
@@ -234,4 +254,90 @@ section{
     height: 40px;
     border-radius: 50%;
     background-color: #ebf5ec;
+}
+
+@media (max-width:780px){
+    .container{
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .container #cart{
+        right: 15%;
+    }
+    .navbar{
+        flex-direction: column;
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    .navbar li{
+        padding-top: 20px;
+    }
+    .open{
+        display: block;
+        top: 16px;
+        right: 10px;
+    }
+    .close{
+        top: 16px;
+        right: 10px;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .container-1{
+        width: 90%;
+        padding: 0;
+    }
+    #hero{
+        height: 60vh;
+        width: 100%;
+        background-position: right -90% top 10%;
+        background-size:contain;
+        object-fit: cover;
+        background-color: rgb(201, 198, 198);
+    }
+    #hero h1{
+        font-size: 28px;
+        line-height: 38px;
+    }
+    
+    #hero p{
+        color:white;
+        padding: 0;
+        font-size: 12px;
+        margin: 5px 0 10px 0;
+    }
+    #hero h4{
+        font-size: 14px;
+        padding-bottom: 4px;
+    }
+    #hero button{
+        padding: 8px 24px;
+        border-radius: 8px;
+        border-color: rgb(6, 167, 167);
+        background-color: transparent;
+        outline: none;
+        color: rgb(6, 167, 167);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .flex-wrap{
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .product-container{
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+    }
+    #featured-pro h2{
+        font-size: 24px;
+    }
+    #featured-pro p{
+        font-size: 14px;
+    }
 }
