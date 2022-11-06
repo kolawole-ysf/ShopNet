@@ -7,7 +7,7 @@
 }
 body{
     width: 100%;
-    }
+      }
 h1{
     font-size: 50px;
     line-height: 64px;
@@ -47,7 +47,7 @@ a{
     font-size: 24px;
     font-weight: 700;
 }
-span{
+.logo span{
     color:rgb(6, 167, 167);
 }
 section{
@@ -66,6 +66,14 @@ section{
 .container-1{
     width: 80%;
     margin: auto;
+    padding: 20px;
+}
+.container-3{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px;
 }
 .flex-wrap{
@@ -172,6 +180,9 @@ section{
     color:white;
     padding: 10px 4px;
 }
+#hero span{
+    color:rgb(6, 167, 167);
+}
 #hero h4{
     padding-bottom: 12px;
 }
@@ -244,6 +255,9 @@ section{
     box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
 }
 .product-card span{
+    color:rgb(6, 167, 167);
+}
+.product-card span{
     font-size: 12px!important;
 }
 .product-card i{
@@ -295,12 +309,13 @@ section{
     width: 80%;
     margin: auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 .banner-box{
     width:48%;
-    min-width: 550px;
+    min-width: 300px;
     height: 40vh;
     background-image: url('https://media.istockphoto.com/id/952718994/photo/happy-woman-in-shopping.jpg?s=612x612&w=0&k=20&c=tZxBn4oDdC21vTpmxEZ-nuZwkh5fy4DzQiLBl7TRbRE=');
     background-position: center;
@@ -311,12 +326,13 @@ section{
     text-align: left;
     align-items: flex-start;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .banner-box:nth-child(2){
     background-image: url('https://media.istockphoto.com/id/1129341836/photo/cropped-close-up-image-view-photo-of-nice-attractive-feminine-fit-thin-slim-shaven-legs.jpg?s=612x612&w=0&k=20&c=zdc1_1974M8vwtfr9Y_yaCNPBnaEm8MUstu8qFakWf4=');
 }
 .banner-box h2{
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
     color: white;
 }
@@ -340,12 +356,50 @@ section{
     font-weight: 500;
     color: white;
 }
+/* -------------------Banner3------------------- */
+.banner-box2{
+    min-width: 250px;
+    width: 30%;
+    height: 25vh;
+    padding: 20px;
+    background-image: url('https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.banner-box2:nth-child(2){
+    background-image: url('https://images.pexels.com/photos/949590/pexels-photo-949590.jpeg?auto=compress&cs=tinysrgb&w=600');
+}
+.banner-box2:nth-child(3){
+    background-image: url('https://images.pexels.com/photos/58592/pexels-photo-58592.jpeg?auto=compress&cs=tinysrgb&w=600');
+}
+
+.banner-box2 h2{
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+}
+.banner-box2 span{
+    font-size: 14px;
+    font-weight: 800;
+    color:rgb(6, 167, 167);
+}
+/* --------------------Mobile Screen--------------------- */
 @media (max-width:780px){
     .container{
         width: 90%;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: space-between;
+    }
+    .container-3{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
     .container #cart{
         right: 15%;
@@ -357,11 +411,22 @@ section{
     .navbar{
         flex-direction: column;
         display: none;
-        padding: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 0px;
+        height: 100vh;
+        position: fixed;
+        background-color: white;
+        right: 0;
+        top:0;
+        padding-top: 50px;
         margin: 0;
+        border-top-left-radius: 20px;
+        box-shadow: 1px 1px 8px rgba(26, 25, 25,0.5);
+        transition:0.5s ease-in-out;
     }
     .navbar li{
-        padding-top: 20px;
+        padding-top: 40px;
     }
     .open{
         display: block;
@@ -369,23 +434,27 @@ section{
         right: 10px;
     }
     .close{
-        top: 16px;
-        right: 10px;
+        display: flex;
+        position: absolute;
+        top:20px;
+        left: 20px;
     }
     .navbar.active{
-        display: block;
+        display: flex;
+        width: 250px;
+    }
+    #cart{
+        display: none;
     }
     .container-1{
         width: 90%;
+        justify-content: center;
         padding: 0;
     }
     #hero{
         height: 60vh;
-        width: 100%;
         background-position: right 0% top 30%;
-        background-size:contain;
-        object-fit: cover;
-        background-color: rgb(201, 198, 198);
+        
     }
     #hero h1{
         font-size: 28px;
@@ -413,14 +482,20 @@ section{
         font-weight: 600;
         cursor: pointer;
     }
+    .fe-card{
+        margin-right: 20px;
+    }    
     .flex-wrap{
         flex-wrap: wrap;
         align-items: center;
     }
     .product-container{
         align-items: center;
-        flex-direction: column;
+        justify-content: center;
         width: 90%;
+    }
+    .product-card{
+        margin-right: 20px;
     }
     #featured-pro h2{
         font-size: 24px;
@@ -428,9 +503,12 @@ section{
     #featured-pro p{
         font-size: 14px;
     }
+    #banner{
+        height: auto;
+    }
     #banner h2{
         color: white;
-        font-size: 24px;
+        font-size: 20px;
     }
     .normal-btn{
         padding: 8px 16px;
@@ -444,14 +522,22 @@ section{
     }
     .banner-container{
         width: 90%;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         margin: auto;
     }
     .banner-box{
+        width: 100%;
         min-width: 350px;
         height: auto;
         margin-bottom: 20px;
+    }
+    .banner-box2{
+        width: 100%;
+        min-width: 200px;
+        margin: 10px auto;
+    }
+    .banner-box2 h2{
+        font-size: 20px;
     }
 }
