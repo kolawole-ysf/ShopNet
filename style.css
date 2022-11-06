@@ -287,6 +287,59 @@ section{
     color: white;
     font-size: 40px;
 }
+/* -------------------banner2-------------------- */
+#banner2{
+    margin: 20px 0;
+}
+.banner-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.banner-box{
+    width:48%;
+    min-width: 550px;
+    height: 40vh;
+    background-image: url('https://media.istockphoto.com/id/952718994/photo/happy-woman-in-shopping.jpg?s=612x612&w=0&k=20&c=tZxBn4oDdC21vTpmxEZ-nuZwkh5fy4DzQiLBl7TRbRE=');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+}
+.banner-box:nth-child(2){
+    background-image: url('https://media.istockphoto.com/id/1129341836/photo/cropped-close-up-image-view-photo-of-nice-attractive-feminine-fit-thin-slim-shaven-legs.jpg?s=612x612&w=0&k=20&c=zdc1_1974M8vwtfr9Y_yaCNPBnaEm8MUstu8qFakWf4=');
+}
+.banner-box h2{
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+}
+.banner-box h4{
+    font-size: 16px;
+    font-weight: 500;
+}
+.banner-box h4, span{
+    color: white;
+}
+.banner-box span{
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+.banner-box button{
+    background-color: transparent;
+    border: 1px solid white;
+    outline: none;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+}
 @media (max-width:780px){
     .container{
         width: 90%;
@@ -388,5 +441,17 @@ section{
         font-weight: 700;
         transition: all .2s ease-in-out;
         font-size: 16px;
+    }
+    .banner-container{
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+    .banner-box{
+        min-width: 350px;
+        height: auto;
+        margin-bottom: 20px;
     }
 }
