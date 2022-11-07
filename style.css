@@ -404,7 +404,6 @@ section{
     width: 100%;
     min-height: 100px;
     background-color:rgb(26, 25, 25) ;
-    margin-bottom: 20px;
     padding: 20px 0;
 }
 .news-container{
@@ -463,15 +462,68 @@ section{
 #footer{
     width: 100%;
     background-color: whitesmoke;
-    padding: 20px 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.col a{
+    color: darkgray;
 }
 .footer-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     margin: auto;
     width: 80%;
+    padding-top: 50px;
+}
+.footer-container h5{
+    padding-bottom: 10px;
+}
+.footer-container h4{
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.col{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.col p{
+    margin: 10px 0;
+}
+.col h5 a{
+    font-size: 28px;
+    color: black;
+}
+.col a{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.col a:hover{
+    color:rgb(6, 167, 167);
+}
+.app-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.app-icon img{
+    width: 150px;
+    margin-right: 20px;
+}
+.col .payment{
+    width: 200px;
+}
+.icons a{
+    margin-right: 20px;
 }
 /* --------------------Mobile Screen--------------------- */
 @media (max-width:780px){
