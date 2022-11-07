@@ -96,6 +96,8 @@ section{
     padding: 8px 20px;
     background-color: white;
     color: black;
+    border: 1px solid white;
+    outline: none;
     border-radius: 4px;
     margin: 10px 0;
     font-weight: 700;
@@ -103,7 +105,9 @@ section{
 }
 .normal-btn:hover{
     background-color: rgb(6, 167, 167);
+    border: 1px solid rgb(6, 167, 167);
     color: white;
+
 }
 /*----------------------Navbar-----------------------------*/
 #header{
@@ -117,11 +121,14 @@ section{
     left:0;
     z-index: 10;
 }
-.container #cart{
+#header #cart{
+    display: block;
     position: absolute;
-    right: 10%;
-}
-.container #cart:hover{
+    top: 20px;
+    right: 10%;    }
+
+
+#header #cart:hover{
     color: rgb(6, 167, 167);
 }
 .navbar{
@@ -161,6 +168,7 @@ section{
 .navbar li a:hover::after{
     width: 30%;
 }
+
 /*----------------------Hero-----------------------------*/
 #hero{
     display: flex;
@@ -204,7 +212,7 @@ section{
 }
 /*----------------------Feature-----------------------------*/
 #feature{
-    background-color: whitesmoke;
+    background-color: white;
     width: 100%;
     padding:20px 0;
 }
@@ -213,6 +221,7 @@ section{
     padding: 20px 12px;
     box-shadow: 0.2px 0.2px 6px rgba(26, 25, 25,0.5);
     border-radius: 8px;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -221,7 +230,7 @@ section{
 }
 /* --------------------featured-product------------------ */
 #featured-pro{
-    background-color: whitesmoke;
+    background-color: white;
     width: 100%;
     padding:20px 0;
     text-align: center;
@@ -246,6 +255,7 @@ section{
     margin: 15px 0;
     position:relative;
     text-align: left;
+    background-color: whitesmoke;
 }
 .product-card img{
     width: 100%;
@@ -304,6 +314,7 @@ section{
 /* -------------------banner2-------------------- */
 #banner2{
     margin: 20px 0;
+    background-color: white;
 }
 .banner-container{
     width: 80%;
@@ -388,6 +399,80 @@ section{
     font-weight: 800;
     color:rgb(6, 167, 167);
 }
+/* ----------------Newsletter Section-------------------- */
+#newsletter{
+    width: 100%;
+    min-height: 100px;
+    background-color:rgb(26, 25, 25) ;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+.news-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+}
+.newsletter-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    }
+.newsletter-text h3{
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+}
+.newsletter-text p{
+    font-size: 16px;
+    color: white;
+}
+.newsletter-text span{
+    color: rgb(6, 167, 167);
+}
+.newsletter-form{
+    width: 50%;
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.newsletter-form input{
+    width: 85%;
+    height: 50px;
+    padding: 0px 20px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid white;
+    
+}
+.newsletter-form button{
+    width:20%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: rgb(6, 167, 167);
+    color: white;
+    border:1px solid rgb(6, 167, 167);
+}
+/* -------------------footer Section---------------------- */
+#footer{
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 20px 0;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+}
 /* --------------------Mobile Screen--------------------- */
 @media (max-width:780px){
     .container{
@@ -401,9 +486,13 @@ section{
         align-items: center;
         justify-content: center;
     }
-    .container #cart{
-        right: 15%;
+    #header #cart{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 15%;    
     }
+    
     .logo{
         font-size: 20px;
         font-weight: 700;
@@ -423,7 +512,7 @@ section{
         margin: 0;
         border-top-left-radius: 20px;
         box-shadow: 1px 1px 8px rgba(26, 25, 25,0.5);
-        transition:0.5s ease-in-out;
+        transition: width 0.3s ease-in;
     }
     .navbar li{
         padding-top: 40px;
@@ -432,16 +521,18 @@ section{
         display: block;
         top: 16px;
         right: 10px;
+        font-size: 20px;
     }
     .close{
         display: flex;
         position: absolute;
+        font-size: 20px;
         top:20px;
         left: 20px;
     }
     .navbar.active{
         display: flex;
-        width: 250px;
+        width: 200px;
     }
     #cart{
         display: none;
@@ -540,4 +631,30 @@ section{
     .banner-box2 h2{
         font-size: 20px;
     }
+    .news-container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 100%;
+        padding: 0 20px;
+    }
+    #newsletter{
+        height: auto;
+        padding-bottom: 20px;
+    }
+    .newsletter-text h3{
+        font-size: 20px;
+    }
+    .newsletter-text p{
+        font-size: 14px;
+    }
+    .newsletter-form{
+        width: 100%;
+    }
+    .newsletter-form button{
+        width: 20%;
+    }
+    
 }
