@@ -561,7 +561,7 @@ section{
         display: block;
         position: absolute;
         top: 20px;
-        right: 18%;    
+        right: 16%;    
     }
     
     .logo{
@@ -709,7 +709,7 @@ section{
         flex-wrap: wrap;
         margin: auto;
         width: 100%;
-        padding: 0 20px;
+        padding: 0 10px;
     }
     #newsletter{
         height: auto;
@@ -723,7 +723,7 @@ section{
         font-size: 14px;
     }
     .newsletter-form{
-        width: 90%;
+        width: 80%;
     }
     .newsletter-form button{
         width: 20%;
@@ -731,7 +731,7 @@ section{
         font-size: 12px;
     }
     .newsletter-form input{
-        width: 80%;
+        width: 75%;
         height: 40px;
         font-size: 12px;
     }
