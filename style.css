@@ -709,6 +709,7 @@ section{
         padding: 0 20px;
     }
     #newsletter{
+        width: 100%;
         height: auto;
         padding-bottom: 20px;
     }
@@ -726,7 +727,7 @@ section{
         font-size: 12px;
     }
     .newsletter-form input{
-        width: 80%;
+        width:70%;
         height: 40px;
         font-size: 12px;
     }
