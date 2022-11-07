@@ -709,11 +709,13 @@ section{
         flex-wrap: wrap;
         margin: auto;
         width: 100%;
-        padding: 0 20px;
     }
     #newsletter{
         height: auto;
         padding-bottom: 20px;
+    }
+    .newsletter-text{
+        padding: 0 10px;
     }
     .newsletter-text h3{
         font-size: 20px;
@@ -726,10 +728,13 @@ section{
     }
     .newsletter-form button{
         width: 20%;
-        font-size: 14px;
+        height: 40px;
+        font-size: 12px;
     }
     .newsletter-form input{
-        font-size: 14px;
+        width: 75%;
+        height: 40px;
+        font-size: 12px;
     }
     .footer-container{
         width: 100%;
