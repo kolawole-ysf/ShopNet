@@ -453,7 +453,7 @@ section{
 }
 .newsletter-form{
     width: 50%;
-    min-width: 350px;
+    min-width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -705,11 +705,8 @@ section{
     .news-container{
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        margin: auto;
         width: 100%;
-        padding: 0 10px;
+        padding: 0 20px;
     }
     #newsletter{
         height: auto;
@@ -722,16 +719,14 @@ section{
     .newsletter-text p{
         font-size: 14px;
     }
-    .newsletter-form{
-        width: 80%;
-    }
+    
     .newsletter-form button{
         width: 20%;
         height: 40px;
         font-size: 12px;
     }
     .newsletter-form input{
-        width: 75%;
+        width: 80%;
         height: 40px;
         font-size: 12px;
     }
