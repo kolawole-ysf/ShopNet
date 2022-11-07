@@ -561,7 +561,7 @@ section{
         display: block;
         position: absolute;
         top: 20px;
-        right: 15%;    
+        right: 18%;    
     }
     
     .logo{
@@ -709,14 +709,13 @@ section{
         flex-wrap: wrap;
         margin: auto;
         width: 100%;
+        padding: 0 20px;
     }
     #newsletter{
         height: auto;
         padding-bottom: 20px;
     }
-    .newsletter-text{
-        padding: 0 10px;
-    }
+    
     .newsletter-text h3{
         font-size: 20px;
     }
@@ -724,7 +723,7 @@ section{
         font-size: 14px;
     }
     .newsletter-form{
-        width: 100%;
+        width: 90%;
     }
     .newsletter-form button{
         width: 20%;
@@ -732,12 +731,12 @@ section{
         font-size: 12px;
     }
     .newsletter-form input{
-        width: 75%;
+        width: 80%;
         height: 40px;
         font-size: 12px;
     }
     .footer-container{
         width: 100%;
-        padding: 0 20px;
+        padding: 20px;
     }
 }
