@@ -18,3 +18,27 @@ toggleBtn.forEach(btn=>{
                 }
         })
 })
+// Cart count
+const cartBag=document.querySelector('.cart-count');
+const cartBtns=document.querySelectorAll('.cart');
+let cartCount=0;
+cartBtns.forEach(cartBtn=>{
+        cartBtn.addEventListener('click',()=>{
+                        if(cartBtn.classList.contains('active')){
+                                cartBtn.classList.remove('active');
+                                cartCount-=1;
+                                cartBag.innerText=cartCount;
+                        }else{
+                                cartBtn.classList.add('active');
+                                cartCount+=1;
+                                cartBag.innerText=cartCount;
+                        } 
+                        if(cartCount>0){
+                                cartBag.style.display='block';
+                        }else{
+                                cartBag.style.display='none';
+                        }       
+                             
+                
+        })
+})
