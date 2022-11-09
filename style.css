@@ -785,4 +785,10 @@ section{
         width: 100%;
         padding: 20px;
     }
+    .cart-container{
+        width: 100%;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
