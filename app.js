@@ -21,24 +21,38 @@ toggleBtn.forEach(btn=>{
 // Cart count
 const cartBag=document.querySelector('.cart-count');
 const cartBtns=document.querySelectorAll('.cart');
-let cartCount=0;
+
 cartBtns.forEach(cartBtn=>{
-        cartBtn.addEventListener('click',()=>{
-                        if(cartBtn.classList.contains('active')){
-                                cartBtn.classList.remove('active');
-                                cartCount-=1;
-                                cartBag.innerText=cartCount;
-                        }else{
-                                cartBtn.classList.add('active');
-                                cartCount+=1;
-                                cartBag.innerText=cartCount;
-                        } 
-                        if(cartCount>0){
-                                cartBag.style.display='block';
-                        }else{
-                                cartBag.style.display='none';
-                        }       
-                             
-                
+                cartBtn.addEventListener('click',()=>{
+                let totalcartCount=localStorage.getItem('productCount');
+                totalcartCount=parseInt(totalcartCount);
+                if(totalcartCount && cartBtn){
+                        localStorage.setItem('productCount', totalcartCount+1);
+                        cartBtn.classList.add('active');
+                        cartBag.innerText=totalcartCount + 1;
+                }else{
+                        localStorage.setItem('productCount', 1);
+                        cartBag.innerText=totalcartCount = 1;
+                        cartBtn.classList.add('active');
+                }
         })
 })
+ function cartContent(){
+        let totalcartCount=localStorage.getItem('productCount');
+        if(totalcartCount){
+                cartBag.innerText=totalcartCount;
+        }
+ }
+cartContent();
+
+
+
+
+
+ //cart Records
+ const proCard=document.querySelector('.product-card');
+ const proImage=document.querySelector('.product-img');
+ const proName=document.querySelector('.product-details h5');
+ const proPrice=document.querySelector('.product-details h4');
+ const cartContainer=document.querySelector('.cart-container');
+ 
