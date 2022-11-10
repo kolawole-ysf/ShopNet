@@ -791,4 +791,7 @@ section{
         justify-content: space-between;
         align-items: center;
     }
+    .cart-card{
+        margin-bottom: 20px;
+    }
 }
