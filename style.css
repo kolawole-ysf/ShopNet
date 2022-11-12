@@ -100,14 +100,26 @@ section{
     outline: none;
     border-radius: 4px;
     margin: 10px 0;
-    font-weight: 700;
+    font-weight: 500;
     transition: all .2s ease-in-out;
 }
-.normal-btn:hover{
+.normal-btn:hover, .normal-btn2:hover{
     background-color: rgb(6, 167, 167);
     border: 1px solid rgb(6, 167, 167);
     color: white;
 
+}
+.normal-btn2{
+    padding: 8px 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all .2s ease-in-out;
 }
 /*----------------------Navbar-----------------------------*/
 #header{
@@ -576,10 +588,11 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 350px;
+    min-width: 400px;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid darkgray;
+    margin-bottom: 20px;
 }
 .cart-card img{
     height: 100%;
@@ -604,7 +617,22 @@ section{
     color: darkgray;
     font-size: 14px;
 }
-
+.total-cost{
+    margin-top: 20px;
+    margin-left: 155px;
+    align-self: flex-end;
+}
+table{
+    width: 300px;
+    margin-bottom: 20px;
+}
+table,th,td{
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+td{
+    padding: 8px;
+}
 /* --------------------Mobile Screen--------------------- */
 @media (max-width:780px){
     .container{
@@ -812,6 +840,10 @@ section{
     }
     .cart-card img{
         margin-right: 4px;
+    }
+    .total-cost{
+        position: relative;
+        margin: auto;
     }
     
 }

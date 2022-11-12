@@ -50,8 +50,10 @@ cartButtons.forEach(button=>{
                 image: e.target.parentElement.children[0].src,
                 name: e.target.parentElement.children[1].children[1].innerText,
                 quantity: 1,
+                totalQuantity: 1,
                 price: parseInt(e.target.parentElement.children[1].children[3].innerText),
-                totalPrice: parseInt(e.target.parentElement.children[1].children[3].innerText)
+                totalPrice: parseInt(e.target.parentElement.children[1].children[3].innerText),
+                cartTotal: parseInt(e.target.parentElement.children[1].children[3].innerText)
         }
         storeProduct(product);
         })
@@ -66,10 +68,19 @@ function storeProduct(product){
                 cartItem.forEach(item=>{
                         if(product.image==item.image){
                                 product.quantity = item.quantity +=1;
-                                product.totalPrice=product.price*product.quantity;
-                                
+                                product.totalQuantity = item.totalQuantity+=1;
+                                product.totalPrice=product.price*product.quantity; 
+                                const arr=cartItem.map(o=>o.totalPrice);
+                                product.cartTotal=arr.reduce(function(a,x){
+                                        return a+=x;
+                                });
+                                                              
                         }else{
-
+                                product.totalQuantity = item.totalQuantity+=1;
+                                const arr=cartItem.map(o=>o.totalPrice);
+                                product.cartTotal=arr.reduce(function(a,x){
+                                        return a+=x;
+                                });
                                 products.push(item)
                         }
                 })
@@ -90,18 +101,47 @@ function storeProduct(product){
                            <ul class="collection">
                                 <li class="item">Product:<span>${item.name}</span></li>
                                 <li class="item">QTY:<span>${item.quantity}</span></li>
-                                <li class="item">Price:<span>${item.price}</span></li>
-                                <li class="item">Total Price:<span>${item.totalPrice}</span></li>
+                                <li class="item">Price:<span>$${item.price}</span></li>
+                                <li class="item">Total Price:<span>$${item.totalPrice}</span></li>
                            </ul>
                         </div>
                 
-                `  
+                ` ;
+
         });
         document.querySelector('.cart-container').innerHTML=cartCard; 
  };
+ function displayPayment(){
+        let cartItem= JSON.parse(localStorage.getItem('prdInCart'));
+        cartItem.forEach(item=>{
+                let payment='';
+                if(cartItem){
+                        payment+=`
+                        <div class="total-cost">
+                        <h4>Cart Total</h4>
+                        <table>
+                            <tr>
+                                <td>Total Quantity</td>
+                                <td>${item.totalQuantity}</td>
+                            </tr>
+                            <tr>
+                                <td>Cart Total</td>
+                                <td>$${item.cartTotal}</td>
+                            </tr>
+                        </table>
+                        <a href="" class="normal-btn2">Make payment</a>
+                    </div>
+                        ` ;
+                };
+                document.querySelector('.payment-card').innerHTML=payment;
+        })
+ };
+
+ 
  document.addEventListener('DOMContentLoaded',()=>{
-        if(document.querySelector('.cart-container')){
+        if(document.querySelector('.cart-container') && document.querySelector('.payment-card')){
                 displayCart();
+                displayPayment();
         }
  });
  
