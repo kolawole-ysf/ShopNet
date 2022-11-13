@@ -633,6 +633,9 @@ table,th,td{
 td{
     padding: 8px;
 }
+#cart-total,#total-quantity{
+    color:#000
+}
 /* --------------------Mobile Screen--------------------- */
 @media (max-width:780px){
     .container{
