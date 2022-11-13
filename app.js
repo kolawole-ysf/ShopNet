@@ -144,4 +144,3 @@ function storeProduct(product){
                 displayPayment();
         }
  });
- 
