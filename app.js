@@ -53,10 +53,10 @@ cartButtons.forEach(button=>{
                 totalQuantity: 1,
                 price: parseInt(e.target.parentElement.children[1].children[3].innerText),
                 totalPrice: parseInt(e.target.parentElement.children[1].children[3].innerText),
-                cartTotal: parseInt(e.target.parentElement.children[1].children[3].innerText)
-        }
+        }     
         storeProduct(product);
         })
+         
 })
 
 function storeProduct(product){
@@ -69,25 +69,16 @@ function storeProduct(product){
                         if(product.image==item.image){
                                 product.quantity = item.quantity +=1;
                                 product.totalQuantity = item.totalQuantity+=1;
-                                product.totalPrice=product.price*product.quantity; 
-                                const arr=cartItem.map(o=>o.totalPrice);
-                                product.cartTotal=arr.reduce(function(a,x){
-                                        return a+=x;
-                                });
-                                                              
+                                product.totalPrice=product.price*product.quantity;                                                              
                         }else{
                                 product.totalQuantity = item.totalQuantity+=1;
-                                const arr=cartItem.map(o=>o.totalPrice);
-                                product.cartTotal=arr.reduce(function(a,x){
-                                        return a+=x;
-                                });
-                                products.push(item)
+                               products.push(item);
                         }
                 })
                 products.push(product);
         }
         localStorage.setItem('prdInCart',JSON.stringify(products));
-        window.location.reload();
+        document.location.reload();
 }
 
  //display local storage content
@@ -111,31 +102,24 @@ function storeProduct(product){
         });
         document.querySelector('.cart-container').innerHTML=cartCard; 
  };
- function displayPayment(){
-        let cartItem= JSON.parse(localStorage.getItem('prdInCart'));
-        cartItem.forEach(item=>{
-                let payment='';
-                if(cartItem){
-                        payment+=`
-                        <div class="total-cost">
-                        <h4>Cart Total</h4>
-                        <table>
-                            <tr>
-                                <td>Total Quantity</td>
-                                <td>${item.totalQuantity}</td>
-                            </tr>
-                            <tr>
-                                <td>Cart Total</td>
-                                <td>$${item.cartTotal}</td>
-                            </tr>
-                        </table>
-                        <a href="" class="normal-btn2">Make payment</a>
-                    </div>
-                        ` ;
-                };
-                document.querySelector('.payment-card').innerHTML=payment;
-        })
- };
+
+ function displayPayment() {
+        let cartItem = JSON.parse(localStorage.getItem('prdInCart'));
+
+        if (!cartItem) return;
+        const initialValue = { totalPrice: 0, totalQuantity: 0 }
+
+        const totals = cartItem.reduce((prev, curr) => {
+                console.log({ prev, curr })
+                return {
+                        totalQuantity: parseInt(curr.totalQuantity),
+                        totalPrice: parseFloat(prev.totalPrice) + parseFloat(curr.totalPrice)
+                } //the format should be the same as the initial value
+        }, initialValue)
+        console.log({ totals })
+        document.getElementById('total-quantity').innerText = totals.totalQuantity;
+        document.getElementById('cart-total').innerText = totals.totalPrice;
+};
 
  
  document.addEventListener('DOMContentLoaded',()=>{
@@ -144,3 +128,5 @@ function storeProduct(product){
                 displayPayment();
         }
  });
+
+//displaying product description

@@ -633,6 +633,69 @@ table,th,td{
 td{
     padding: 8px;
 }
+td span{
+    color: darkgray;
+    font-size: 14px;
+}
+/* -------------------Shop section------------------- */
+#shop-desc-pro{
+    background-color: white;
+    width: 100%;
+    padding: 90px 0;
+    text-align: center;
+    display: none;
+}
+#shop-desc-pro.active{
+    display: flex;
+}
+.product-display{
+    width: 48%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.product-description{
+    width: 48%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.product-description span{
+    color:rgb(6, 167, 167);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.product-display img{
+    width: 100%;
+}
+.product-gal{
+    width: 100%;
+    padding:20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-gal img{
+    width: 22%;
+}
+.product-description p{
+    line-height: 32px;
+    text-align: left;
+}
+.product-description h5, .product-description h3{
+    margin-bottom: 50px;
+}
+.product-description button{
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
 /* --------------------Mobile Screen--------------------- */
 @media (max-width:780px){
     .container{
