@@ -266,8 +266,11 @@ section{
 #shop-featured-pro{
     background-color: white;
     width: 100%;
-    padding: 90px 0;
+    padding: 80px 0;
     text-align: center;
+}
+.shop{
+    display: none;
 }
 .product-container{
     width: 80%;
@@ -643,59 +646,86 @@ td span{
     width: 100%;
     padding: 90px 0;
     text-align: center;
+}
+.s-product{
     display: none;
 }
-#shop-desc-pro.active{
-    display: flex;
+.active{
+    display: block;
+}
+.product-desc{
+    padding: 20px 0;
+    margin-bottom: 10px;
 }
 .product-display{
-    width: 48%;
-    min-width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 40%;
 }
 .product-description{
-    width: 48%;
-    min-width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+    width: 50%;
+    text-align: left;
 }
 .product-description span{
     color:rgb(6, 167, 167);
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .product-display img{
     width: 100%;
+    cursor: pointer;
 }
 .product-gal{
     width: 100%;
-    padding:20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.product-gal img{
-    width: 22%;
+.product-gal .small-img{
+    flex-basis: 24%;
+    cursor: pointer;
 }
 .product-description p{
     line-height: 32px;
     text-align: left;
 }
 .product-description h5, .product-description h3{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .product-description button{
     border: 1px solid black;
     margin-bottom: 30px;
 }
+.product-description select{
+    display: block;
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.product-description input{
+    padding: 8px;
+    width: 50px;
+    margin-right: 20px;
+}
+.product-description select:focus,
+.product-description input:focus{
+    outline: none;
+}
 
+.img-gallery{
+    display: none;
+}
+/* Pagination section */
+#pagination{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+#pagination a{
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    background-color: rgb(6, 167, 167);
+    color: white;
+}
 /* --------------------Mobile Screen--------------------- */
 @media (max-width:780px){
     .container{
@@ -907,6 +937,23 @@ td span{
     .total-cost{
         position: relative;
         margin: auto;
+    }
+    .product-desc{
+        padding: 20px 0;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    .product-display{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-description{
+        width: 100%;
+        text-align: left;
+    }
+    .product-description span{
+        margin-bottom: 20px;
+        font-size: 24px;
     }
     
 }

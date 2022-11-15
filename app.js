@@ -130,3 +130,84 @@ function storeProduct(product){
  });
 
 //displaying product description
+
+        const ProductImgs=document.querySelectorAll('.shop-card');
+        const productDetails=[];
+
+        ProductImgs.forEach(productImg=>{
+                productImg.addEventListener('click',(e)=>{
+                        console.log(e.target)
+                        const productDesc={
+                                image1: e.target.src,
+                                galImage1: e.target.nextElementSibling.children[0].src,
+                                galImage2: e.target.nextElementSibling.children[1].src,
+                                galImage3: e.target.nextElementSibling.children[2].src,
+                                galImage4: e.target.nextElementSibling.children[3].src 
+                        }
+                 storeDesc(productDesc)
+                })
+        
+        });
+
+     //store product description in LS
+
+        function storeDesc(productDesc){
+                let productItem= JSON.parse(localStorage.getItem('prdDesc'));
+        if(productItem===null){
+                productDetails.push(productDesc);
+                localStorage.setItem('prdDesc',JSON.stringify(productDesc));
+        }else{
+                productItem.forEach(pItem=>{
+                        productDetails.push(pItem)
+                })
+
+                productDetails.push(productDesc);
+        }
+        localStorage.setItem('prdDesc',JSON.stringify(productDetails));
+        window.location.reload();
+        }
+      
+//Display product details
+
+function displayProdGal(){
+        let galCard='';
+        let productItem= JSON.parse(localStorage.getItem('prdDesc'));
+        productItem.forEach(pItem=>{
+                galCard=`
+                <img src="${pItem.image1}" alt="" id="mainImg">
+                <div class="product-gal">
+                    <div class="small-img">
+                        <img src="${pItem.galImage1}" alt="" class="gal-img">
+                    </div>
+                    <div class="small-img">
+                        <img src="${pItem.galImage2}" alt="" class="gal-img">
+                    </div>
+                    <div class="small-img">
+                        <img src="${pItem.galImage3}" alt="" class="gal-img">
+                    </div>
+                    <div class="small-img">
+                        <img src="${pItem.galImage4}" alt="" class="gal-img">
+                    </div>
+                </div>
+                ` ;
+
+        });
+        document.querySelector('.product-display').innerHTML=galCard;
+ };
+
+ document.addEventListener('DOMContentLoaded',()=>{
+        if(document.querySelector('.shop')){
+                displayProdGal();
+        }
+ });
+
+//display gallery
+//  const mainImg=document.querySelector('#mainImg');
+// const galImgs=document.querySelectorAll('.gal-img');
+
+// galImgs.forEach(galImg=>{
+//         galImg.addEventListener('click',(e)=>{
+//                 console.log(e.target.src)
+//                 mainImg.src=e.target.src;
+//         })
+// })
