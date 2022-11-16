@@ -139,10 +139,10 @@ function storeProduct(product){
                         console.log(e.target)
                         const productDesc={
                                 image1: e.target.src,
-                                galImage1: e.target.nextElementSibling.children[0].src,
-                                galImage2: e.target.nextElementSibling.children[1].src,
-                                galImage3: e.target.nextElementSibling.children[2].src,
-                                galImage4: e.target.nextElementSibling.children[3].src 
+                                name: e.target.nextElementSibling.children[1].innerText,
+                                price: e.target.nextElementSibling.children[3].innerText,
+                                description: e.target.nextElementSibling.children[4].innerText,
+                                brand: e.target.nextElementSibling.children[0].innerText 
                         }
                  storeDesc(productDesc)
                 })
@@ -174,25 +174,30 @@ function displayProdGal(){
         let productItem= JSON.parse(localStorage.getItem('prdDesc'));
         productItem.forEach(pItem=>{
                 galCard=`
+                <div class="product-display">
                 <img src="${pItem.image1}" alt="" id="mainImg">
-                <div class="product-gal">
-                    <div class="small-img">
-                        <img src="${pItem.galImage1}" alt="" class="gal-img">
-                    </div>
-                    <div class="small-img">
-                        <img src="${pItem.galImage2}" alt="" class="gal-img">
-                    </div>
-                    <div class="small-img">
-                        <img src="${pItem.galImage3}" alt="" class="gal-img">
-                    </div>
-                    <div class="small-img">
-                        <img src="${pItem.galImage4}" alt="" class="gal-img">
-                    </div>
                 </div>
-                ` ;
+                <div class="product-description">
+                <h5>${pItem.brand}</h5>
+                <h3>${pItem.name}</h3>
+                <span>$${pItem.price}</span><br>
+                <select>
+                    <option>Select size</option>
+                    <option>XXL</option>
+                    <option>XL</option>
+                    <option>L</option>
+                    <option>M</option>
+                </select>
+                <input type="number" value="1">
+                <button class="normal-btn">Add To Cart</button>
+                <h4>product Details</h4>
+                <p>${pItem.description}</p>
 
+            </div>
+                ` ;
         });
-        document.querySelector('.product-display').innerHTML=galCard;
+        
+        document.querySelector('.product-desc').innerHTML=galCard;
  };
 
  document.addEventListener('DOMContentLoaded',()=>{
