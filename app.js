@@ -141,7 +141,7 @@ function storeProduct(product){
                                 image1: e.target.src,
                                 name: e.target.nextElementSibling.children[1].innerText,
                                 price: e.target.nextElementSibling.children[3].innerText,
-                                description: e.target.nextElementSibling.children[4].innerText,
+                                description: e.target.parentElement.children[3].innerText,
                                 brand: e.target.nextElementSibling.children[0].innerText 
                         }
                  storeDesc(productDesc)
