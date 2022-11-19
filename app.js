@@ -43,7 +43,7 @@ cartContent();
 //record product details in local storage
 const cartButtons=document.querySelectorAll('.cart');
 
-let products=[];
+
 cartButtons.forEach(button=>{
         button.addEventListener('click',(e)=>{
         const product={
@@ -60,6 +60,7 @@ cartButtons.forEach(button=>{
 })
 
 function storeProduct(product){
+        let products=[];
         let cartItem= JSON.parse(localStorage.getItem('prdInCart'));
         if(cartItem===null){
                 products.push(product);
@@ -78,7 +79,6 @@ function storeProduct(product){
                 products.push(product);
         }
         localStorage.setItem('prdInCart',JSON.stringify(products));
-        document.location.reload();
 }
 
  //display local storage content
@@ -96,7 +96,6 @@ function storeProduct(product){
                                 <li class="item">Total Price:<span>$${item.totalPrice}</span></li>
                            </ul>
                         </div>
-                
                 ` ;
 
         });
@@ -132,8 +131,7 @@ function storeProduct(product){
 //displaying product description
 
         const ProductImgs=document.querySelectorAll('.shop-card');
-        const productDetails=[];
-
+        let productDetails=[];
         ProductImgs.forEach(productImg=>{
                 productImg.addEventListener('click',(e)=>{
                         console.log(e.target)
@@ -150,7 +148,6 @@ function storeProduct(product){
         });
 
      //store product description in LS
-
         function storeDesc(productDesc){
                 let productItem= JSON.parse(localStorage.getItem('prdDesc'));
         if(productItem===null){
@@ -206,13 +203,3 @@ function displayProdGal(){
         }
  });
 
-//display gallery
-//  const mainImg=document.querySelector('#mainImg');
-// const galImgs=document.querySelectorAll('.gal-img');
-
-// galImgs.forEach(galImg=>{
-//         galImg.addEventListener('click',(e)=>{
-//                 console.log(e.target.src)
-//                 mainImg.src=e.target.src;
-//         })
-// })
