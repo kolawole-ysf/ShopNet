@@ -43,9 +43,10 @@ cartContent();
 //record product details in local storage
 const cartButtons = document.querySelectorAll('.cart');
 
-let products = [];
+// let products = []; //this should not be here
 cartButtons.forEach(button => {
         button.addEventListener('click', (e) => {
+                //This
                 const product = {
                         image: e.target.parentElement.children[0].src,
                         name: e.target.parentElement.children[1].children[1].innerText,
@@ -56,14 +57,18 @@ cartButtons.forEach(button => {
                         cartTotal: parseInt(e.target.parentElement.children[1].children[3].innerText)
                 }
                 storeProduct(product);
+                //This
+                // this should be moved to line 21
         })
+    
 })
 
 function storeProduct(product) {
+         let products = [];
         let cartItem = JSON.parse(localStorage.getItem('prdInCart'));
         if (cartItem === null) {
                 products.push(product);
-                localStorage.setItem('prdInCart', JSON.stringify(products));
+                // localStorage.setItem('prdInCart', JSON.stringify(products));
         } else {
                 cartItem.forEach(item => {
                         if (product.image == item.image) {
@@ -87,7 +92,7 @@ function storeProduct(product) {
                 products.push(product);
         }
         localStorage.setItem('prdInCart', JSON.stringify(products));
-        window.location.reload();
+        // window.location.reload();
 }
 
 //display local storage content
